@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "153320548835",
+    "project_id": "food-4-need",
+    "storage_bucket": "food-4-need.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153320548835:android:cc304c57f0ae9c5df218d6",
+        "android_client_info": {
+          "package_name": "com.codetuners.food4need"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153320548835-4v0h7p1iqvg818jm3rnpdg5fagu1l1h8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codetuners.food4need",
+            "certificate_hash": "b30b0eb1327ced42d192bdda2df192af475b8e6f"
+          }
+        },
+        {
+          "client_id": "153320548835-u6rq1qb99ctdgi2l97k0cblanr8j3pjv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ8ZfH-cXiF0oDYsfxfhi94IOexrdwHOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153320548835-u6rq1qb99ctdgi2l97k0cblanr8j3pjv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

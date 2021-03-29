@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Fragments.ProfileFrag">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/colorPrimary">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="20dp">
+            <ImageView
+                android:id="@+id/profile_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/prof_roletype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DONOR/RECEIVER"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:layout_gravity="center|bottom"/>
+
+
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|center_vertical"
+        android:padding="50dp"
+        android:layout_gravity="center|center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/prof_username"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/login_et_bg"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:hint="UserName"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <TextView
+                android:id="@+id/prof_email"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/login_et_bg"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:layout_weight="3"
+                android:hint="Email"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textColorHint="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/prof_tick_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/tick_icon"/>
+
+            <TextView
+                android:id="@+id/prof_bt_verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="verify"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:visibility="gone"
+                android:fontFamily="@font/roboto_medium"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/prof_phoneno"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/login_et_bg"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:hint="Phone No"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/prof_hotelname"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/login_et_bg"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:hint="Hotel Name"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:drawableStart="@drawable/email_icon"
+            android:text="Mahimahionly@gmail.com"
+            android:drawablePadding="15dp"/>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:drawableStart="@drawable/phone_icon"
+            android:text="7010703129"
+            android:drawablePadding="15dp"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/prof_edit_fab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/pencil_icon"
+        android:layout_gravity="bottom|end"/>
+
+
+
+</LinearLayout>

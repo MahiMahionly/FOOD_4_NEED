@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/logincontainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#E67E3E"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Activity.LoginActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/img_login"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/flogo"
+
+                app:layout_constraintBottom_toTopOf="@+id/etlogin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/email_pwd_bg"
+                    android:drawableStart="@drawable/userlogo"
+                    android:drawablePadding="40dp"
+                    android:fontFamily="serif"
+                    android:hint="@string/enter_email"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textColorHint="#ffffff"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/pwdlogin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imglogin" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/email_pwd_bg"
+                    android:drawableStart="@drawable/pwdlogo"
+                    android:drawablePadding="40dp"
+                    android:fontFamily="serif"
+                    android:hint="@string/enter_password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textColorHint="#ffffff"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/lbt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.52"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etlogin" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/bt_login"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/login_et_bg"
+                android:text="@string/login"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvfrgtpwd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pwdlogin" />
+
+
+            <Button
+                android:id="@+id/bt_signup"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/login_et_bg"
+                android:text="@string/signup"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/ly_progresslayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="LOGIN/SIGNUP DETAILS"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_resetpwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="#FF9407"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:text="@string/forget_password"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvfrgtpwd" />
+
+            <TextView
+                android:id="@+id/tv_verifymailid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="#FF9409"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:text="VERIFY EMAIL"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
+
+
+    <!--This below layout contains the textInputLayout EditText Which contains Password Toggle..
+    The Above Constraint Layout is not suits for TextInput Layout + TextInput Edit Text -->
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/logincontainer"
+        android:background="#E67E3E"
+        android:orientation="vertical"
+        tools:context=".activity.LoginActivity">
+        <ImageView
+            android:id="@+id/imglogin"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/flogo" />
+
+        <EditText
+            android:id="@+id/etlogin"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imglogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:drawableStart="@drawable/userlogo"
+            android:hint="Enter Your Mobile Number"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textAlignment="center"
+            android:textColorHint="#ffffff"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lgpwdlayout"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etlogin"
+            app:passwordToggleEnabled="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp">
+            <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pwdlogin"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etlogin"
+            android:layout_centerHorizontal="true"
+                android:gravity="center"
+            android:drawableStart="@drawable/pwdlogo"
+            android:hint="Enter Your Password"
+            android:fontFamily="serif"
+            android:inputType="numberPassword"
+            android:textAlignment="center"
+            android:textColorHint="#ffffff"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/lbt"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lgpwdlayout"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            android:background="#DF4616"
+            android:layout_marginTop="50dp"
+            android:text="LOGIN"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+           />
+
+        <TextView
+            android:id="@+id/tvfrgtpwd"
+            android:layout_width="185dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/lbt"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="serif"
+            android:background="#FF9407"
+            android:layout_marginTop="50dp"
+            android:text="Forget Password?"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/tvrgstr"
+            android:layout_width="360dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="#FF9407"
+            android:text="New To FOODIE FEST? Register Now!"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="serif"
+            android:textSize="20sp"
+          />
+
+  </RelativeLayout>-->
+
+
+    <!--<TextView
+            android:id="@+id/tvfrgtpwd"
+            android:layout_width="185dp"
+            android:layout_height="30dp"
+            android:visibility="gone"
+            android:layout_below="@+id/lbt"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="7dp"
+            android:fontFamily="serif"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="15dp"
+            android:background="#FF9407"
+            android:text="@string/forget_password"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvrgstr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbt" />-->

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#E67E3E"
+    tools:viewBindingIgnore="true"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_alert_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESET YOUR PASSWORD"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:layout_marginBottom="5dp"
+        android:textColor="#fff"/>
+
+    <EditText
+        android:id="@+id/et_resetpwd_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:inputType="textEmailAddress"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/email_pwd_bg"
+        android:hint="Enter Your Existing E-Mail ID" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center">
+        <Button
+            android:id="@+id/bt_cancel_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_et_bg"
+            android:layout_marginEnd="15dp"
+            android:textColor="#fff"
+            android:text="CANCEL"/>
+        <Button
+            android:id="@+id/btt_proceed_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_et_bg"
+            android:textColor="#fff"
+            android:text="PROCEED"/>
+    </LinearLayout>
+
+
+</LinearLayout>

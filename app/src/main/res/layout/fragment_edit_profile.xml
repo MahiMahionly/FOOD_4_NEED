@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#EAB6A5"
+    android:gravity="center"
+    tools:context=".Fragments.EditProfileFrag">
+
+    <FrameLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center">
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="85dp">
+
+        <ImageView
+                android:id="@+id/upload_profile_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:src="@drawable/logo" />
+        </androidx.cardview.widget.CardView>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="120dp"
+            android:foregroundGravity="bottom"
+            android:layout_gravity="end"
+            android:src="@drawable/camera_icon"/>
+    </FrameLayout>
+
+
+    <EditText
+        android:id="@+id/et_edp_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/login_et_bg"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:hint="Enter Your Name"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/donar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Donor"/>
+        <RadioButton
+            android:id="@+id/receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Receiver"
+            android:fontFamily="@font/roboto_medium"/>
+
+    </RadioGroup>
+
+
+    <EditText
+        android:id="@+id/et_edp_hotel_organ_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/login_et_bg"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:hint="Enter Your Hotel or Trust Name"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_edp_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/login_et_bg"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="10"
+        android:hint="Enter Your Phone NO"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/edit_dummy_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/login_et_bg"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:hint="Enter Your Mail"
+            android:padding="10dp"
+            android:enabled="false"
+            android:inputType="textEmailAddress"
+            android:layout_weight="3"
+            android:textAlignment="center"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/tick_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/tick_icon"/>
+
+        <TextView
+            android:id="@+id/bt_verify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="verify"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center"
+            android:fontFamily="@font/roboto_medium"
+            android:textStyle="bold"/>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/done_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="DONE"
+        android:background="#33DEF4"
+        android:fontFamily="@font/roboto_medium"/>
+
+
+
+
+
+</LinearLayout>

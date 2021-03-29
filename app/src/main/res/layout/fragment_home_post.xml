@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.HomePostFrag">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Post_RecyclerView"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"/>
+
+    <include
+        android:layout_height="match_parent"
+        android:id="@+id/progress_lay"
+        layout="@layout/progresslayout"
+        android:layout_width="match_parent" />
+
+</LinearLayout>

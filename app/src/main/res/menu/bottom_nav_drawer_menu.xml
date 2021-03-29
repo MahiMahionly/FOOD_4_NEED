@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/Profile_menuit"
+            android:icon="@drawable/profile_icon"
+            android:title="PROFILE"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/stopcorono_menuit"
+            android:icon="@drawable/corono_icon"
+            android:title="STOP CORONO"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/share_menuit"
+            android:icon="@drawable/share_icon"
+            android:title="SHARE"
+            app:showAsAction="always"/>
+        <item
+            android:id="@+id/about_menuit"
+            android:icon="@drawable/about_icon"
+            android:title="ABOUT"
+            app:showAsAction="always"/>
+        <item
+            android:id="@+id/logout_menuit"
+            android:icon="@drawable/logout_icon"
+            android:title="LOGOUT"
+            app:showAsAction="always"/>
+    </group>
+</menu>
