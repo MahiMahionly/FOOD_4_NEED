@@ -2,6 +2,7 @@ package com.codetuners.food4need.Fragments
 
 import android.app.Activity
 import android.app.Activity.RESULT_OK
+import android.app.ProgressDialog
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
@@ -36,7 +37,7 @@ import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.fragment_web.*
 import java.io.ByteArrayOutputStream
 
-class EditProfileFrag : Fragment(),View.OnClickListener {
+class EditProfileFrag : Fragment() {
     private var _editprofbinding:FragmentEditProfileBinding?=null
     private val editProfileBinding get() = _editprofbinding!!
     private lateinit var sp:SharedPreferences
@@ -50,6 +51,7 @@ class EditProfileFrag : Fragment(),View.OnClickListener {
     var hotelorganname:String=""
     var phoneno:String=""
     var name:String=""
+    private lateinit var pd:ProgressDialog
 
     private lateinit var data:ByteArray
     companion object{
@@ -82,12 +84,6 @@ class EditProfileFrag : Fragment(),View.OnClickListener {
         isemailverified=sp.getBoolean("userinfo_isemverified",isemailverified)
         uid=sp.getString("userinfo_uid",uid).toString()
 
-        editProfileBinding.editDummyEmail.text = mail
-
-        editProfileBinding.doneBt.setOnClickListener(this)
-        editProfileBinding.btVerify.setOnClickListener(this)
-        editProfileBinding.uploadProfilePhoto.setOnClickListener(this)
-
         name=editProfileBinding.etEdpName.text.toString()
 
         val selectedoption:Int=editProfileBinding.radiogroup.checkedRadioButtonId
@@ -95,6 +91,20 @@ class EditProfileFrag : Fragment(),View.OnClickListener {
 
         hotelorganname=editProfileBinding.etEdpHotelOrganName.text.toString()
         phoneno=editProfileBinding.etEdpPhone.text.toString()
+
+        editProfileBinding.editDummyEmail.text = mail
+
+        editProfileBinding.doneBt.setOnClickListener{
+            store_updates(name,role,hotelorganname,phoneno,mail,photourl,uid)
+        }
+        editProfileBinding.btVerify.setOnClickListener{
+            //call firebase for verification
+        }
+        editProfileBinding.uploadProfilePhoto.setOnClickListener{
+            showgal_cam_dialog()
+        }
+
+
 
         showtickicon()
 
@@ -144,7 +154,7 @@ class EditProfileFrag : Fragment(),View.OnClickListener {
 
     }*/
 
-    override fun onClick(p0: View?) {
+/*    override fun onClick(p0: View?) {
         when(p0?.id){
             R.id.done_bt->{
                 store_updates(name,role,hotelorganname,phoneno,mail,photourl,uid)
@@ -163,7 +173,7 @@ class EditProfileFrag : Fragment(),View.OnClickListener {
             }
         }
 
-    }
+    }*/
 
     private fun store_updates(
         name: String,
@@ -179,7 +189,7 @@ class EditProfileFrag : Fragment(),View.OnClickListener {
             return
         }
 
-        context?.MahiShortToast("Profile is Updating")
+        showprogressdialog("Your Profile Is Updating Now...")
 
         val timestamp="Prof"+name+"_"+uid
         val profileimage=editProfileBinding.uploadProfilePhoto.drawable
@@ -191,7 +201,7 @@ class EditProfileFrag : Fragment(),View.OnClickListener {
             data=baos.toByteArray()
         }
 
-        val profstoragereference=Firebase.storage.reference.child("Prof_Images$timestamp")
+        val profstoragereference=Firebase.storage.reference.child("PROFILE/Prof_Images$timestamp")
 
         profstoragereference.putBytes(data).addOnSuccessListener {  snap->
 
@@ -360,7 +370,7 @@ class EditProfileFrag : Fragment(),View.OnClickListener {
     }
 
     fun validateinputs():Boolean{
-        var valid=true
+        var valid: Boolean
         val name=editProfileBinding.etEdpName.text.toString()
         val checkrdbtn=editProfileBinding.radiogroup.checkedRadioButtonId
         val btn=activity?.findViewById<RadioButton>(checkrdbtn)
@@ -370,9 +380,18 @@ class EditProfileFrag : Fragment(),View.OnClickListener {
             valid=false
         }else if (btn==null){
             valid=false
-        }else if(TextUtils.isEmpty(hname)){
+        }else if(editProfileBinding.uploadProfilePhoto.drawable==null){
+            valid=false
+        } else if(TextUtils.isEmpty(hname)){
             valid=false
         }else valid = !TextUtils.isEmpty(phone)
         return valid
+    }
+
+    private fun showprogressdialog(message: String){
+        pd= ProgressDialog(context)
+        pd.setMessage(message)
+        pd.setCancelable(false)
+        pd.show()
     }
 }

@@ -104,6 +104,7 @@ class ProfileFrag : Fragment(){
         profdbref.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
 
+
 //                val child=snapshot.children
 
                 /*child.forEach {
@@ -122,7 +123,18 @@ class ProfileFrag : Fragment(){
 
 
                 for(s in snapshot.children){
-                    s.getValue(USER::class.java)
+                    val user = s.getValue(USER::class.java)!!
+
+
+                    username=user.Name
+                    role=user.role
+                    photourl=user.Image
+                    email=user.email
+                    phoneno=user.phone
+                    hotelname=user.hotel_organ_name
+
+
+                    context?.MahiLongToast("Details From DB$username $role $photourl $email $phoneno $hotelname")
                 }
                 UpdateUI(username,role,photourl,email,phoneno,hotelname)
             }

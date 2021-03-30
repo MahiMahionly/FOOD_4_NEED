@@ -1,14 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F4C9AE"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Fragments.AboutFrag">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/txtabout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="INFORMATION ABOUT WHO AM I?"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/myimg"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/mahi"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/txtabout"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/txtfollowme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/myimg"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="18dp"
+            android:fontFamily="serif"
+            android:textColor="#FF5722"
+            android:text="DEVELOPED BY - MAHI \n\n FOLLOW ME ON"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ytflw"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/youtube"
+            android:layout_below="@+id/txtfollowme"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp" />
+        <ImageView
+            android:id="@+id/teleflw"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/tele"
+            android:layout_below="@id/txtfollowme"
+            android:layout_toEndOf="@id/ytflw"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp" />
+        <ImageView
+            android:id="@+id/fbflw"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/fb"
+            android:layout_below="@+id/ytflw"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp" />
+        <ImageView
+            android:id="@+id/instaflw"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/insta"
+            android:layout_below="@id/teleflw"
+            android:layout_toEndOf="@id/fbflw"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp" />
+        <TextView
+            android:id="@+id/txtendflw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="If You Have Any Quries Contact Me:"
+            android:layout_below="@id/instaflw"
+            android:layout_marginTop="30dp"
+            android:textColor="#FF5722"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mahimahionly@gmail.com"
+            android:layout_below="@id/txtendflw"
+            android:autoLink="all"
+            android:clickable="true"
+            android:textColorLink="#2196F3"
+            android:textAlignment="center"
+            android:layout_marginTop="35dp"
+            android:textSize="15sp"
+            android:layout_alignParentBottom="true"
+            android:focusable="true" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fltingbtnme"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="15dp"
+            app:fabSize="normal"
+            android:layout_marginEnd="5dp"
+            android:elevation="9dp"
+            android:src="@drawable/ic_fltshare"
+            android:scaleType="centerCrop"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fltingbtnaware"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            app:fabSize="normal"
+            android:layout_marginStart="5dp"
+            android:elevation="9dp"
+            android:src="@drawable/ic_fltaware"
+            android:scaleType="centerCrop"/>
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
+<!--
+ <ImageView
+            android:id="@+id/ffdwnldlink"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_download"
+            android:layout_toStartOf="@id/myimg"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="25dp"/>
+        <ImageView
+            android:id="@+id/ffwebsitelink"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_ffwebsite"
+            android:layout_toEndOf="@id/myimg"
+            android:layout_marginTop="120dp"
+            android:layout_marginStart="25dp"/>-->
+
